@@ -1,0 +1,36 @@
+body{
+    font-family: Arial
+}
+
+#newword{
+    display: inline-block;
+    border-right: 2px solid black;
+    padding-right: 20px;
+}
+
+#wordlist{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#wordlist p{
+    margin: 2px;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color:green;
+}
+
+.blue{
+    color: blue;
+}
+
+.big{
+    font-family: Impact;
+    font-weight: bold;
+    font-size: 20pt;
+}

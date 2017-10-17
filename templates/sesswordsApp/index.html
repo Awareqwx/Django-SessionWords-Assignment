@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Session Words</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'sesswordsApp/css/style.css' %}"
+    </head>
+    <body>
+        <form id="newword" action="add/" method="post">
+            {% csrf_token %}
+            <h3> Add a new word</h3>
+            <input type="text" name="word">
+            <p>Choose color</p>
+            <p><input type="radio" name="color" value="red" checked> Red</p>
+            <p><input type="radio" name="color" value="green"> Green</p>
+            <p><input type="radio" name="color" value="blue"> Blue</p>
+            <p><input type="checkbox" name="big" value="big"> Show in BIG fonts!</p>
+            <input type="submit" value="Add word">
+        </form>
+        <div id="wordlist">
+            <form action="clear/"><input type="submit" Value="Clear Words"></form>
+            {% for i in words %}
+                {% if i.2 %}
+                    <p class="{{i.1}} big">{{i.0}}</p>
+                {% else %}
+                    <p class="{{i.1}}">{{i.0}}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </body>
+</html>
